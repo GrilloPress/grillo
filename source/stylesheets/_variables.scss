@@ -1,0 +1,19 @@
+$font-family-base: sans-serif;
+$font-size-base: 20px;
+$font-weight-base: 500;
+$line-height-base: 1.4;
+$body-color: #000;
+$body-bg: #FFF;
+
+$headings-margin-bottom:  1rem;
+$paragraph-margin-bottom: 0.5rem;
+
+$dt-font-weight: 800;
+
+$link-color: blue;
+$link-decoration: none;
+$link-hover-color: darken( $link-color, 10% );
+$link-hover-decoration: none;
+$text-muted: lighten( $body-color, 10%);
+
+$table-cell-padding: 0.2rem;
