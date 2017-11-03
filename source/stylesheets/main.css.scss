@@ -1,24 +1,16 @@
 @import "variables";
 @import "reboot";
 
-html {
+.container {
 
-  margin: auto;
-  box-sizing: border-box;
   max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 2rem;
+  padding: 1rem;
 
-}
-
-main, #main {
-
-  max-width: 600px;
-  float: left;
-  padding: 1em;
-}
-
-aside {
-
-  max-width: 300px;
-  float: left;
-  padding: 1em;
+  @media screen and (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
 }
