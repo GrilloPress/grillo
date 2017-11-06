@@ -16,6 +16,7 @@
 
   @media screen and (max-width: $mobile) {
     grid-template-columns: 100%;
+    grid-gap: 0.3rem;
   }
 }
 
@@ -47,9 +48,9 @@
 }
 
 
-// Blog posts
+// Page/post containers
 
-.blog-post {
+.blog-post, .summary-page, .calendar-page {
 
   padding: 2rem 0;
 
@@ -57,17 +58,25 @@
 
     margin-bottom: 2rem;
   }
+
+  @media screen and (max-width: $mobile) {
+    padding: .5rem 0;
+  }
 }
 
 // sidebar
 
 aside.sidebar {
 
-  margin-top: 2rem;
+  padding: 2rem 0;
 
   h2, h3 {
 
     font-size: 1.25rem;
 
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: .5rem 0;
   }
 }

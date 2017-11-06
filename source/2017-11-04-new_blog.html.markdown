@@ -6,7 +6,7 @@ tags: blogging, css grid
 I've started this blog with two aims:
 
 - To learn more CSS
-- To collect and publish things I have learned
+- To collect and publish things I have learned as an interaction designer
 
 ## Keeping it simple
 
