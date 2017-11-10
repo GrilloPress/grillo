@@ -8,41 +8,50 @@
       GrilloPress#{' - ' + current_article.title unless current_article.nil?}
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     = stylesheet_link_tag 'main'
+    = yield_content :css
     = javascript_include_tag 'main'
-  %body
-    %nav.navbar
-      %div.navbar-container
-        %div
-          = link_to "Andrew Duckworth", "/"
-    #main.container{:role => "main"}
-      %article.blog-post
-        %h1
-          = current_page.data.title
-        = yield
+  %body{ :class => page_classes }
+    %main{:role => "main"}
+      %nav.navbar
+        %div.navbar-container
+          %div
+            = link_to "Andrew Duckworth", "/"
+      %article
+        - if content_for?(:hero)
+          %section.hero
+            %div.container
+              %div
+                %h1
+                  = current_page.data.title
+                = yield_content :hero
 
-        %nav.pagination
-          .prev
-            - prev_article = current_article.previous_article
-            - if prev_article
-              Previous:
-              %a{ :rel => "prev", :href => prev_article.url }= prev_article.title
-          .next
-            - next_article = current_article.next_article
-            - if next_article
-              Next:
-              %a{ :rel => "next", :href => next_article.url }= next_article.title
-      %aside.sidebar
-        %h2 Recent Articles
-        %ol
-          - blog.articles[0...10].each do |article|
-            %li
-              = link_to article.title, article
-              %span= article.date.strftime('%b %e')
-        %h2 Tags
-        %ol
-          - blog.tags.each do |tag, articles|
-            %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
-        %h2 By Year
-        %ol
-          - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-            %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
+        #article.container{:role => "main"}
+          %section.blog-post
+            = yield
+
+            %nav.pagination
+              .prev
+                - prev_article = current_article.previous_article
+                - if prev_article
+                  Previous:
+                  %a{ :rel => "prev", :href => prev_article.url }= prev_article.title
+              .next
+                - next_article = current_article.next_article
+                - if next_article
+                  Next:
+                  %a{ :rel => "next", :href => next_article.url }= next_article.title
+          %aside.sidebar
+            %h2 Recent Articles
+            %ol
+              - blog.articles[0...10].each do |article|
+                %li
+                  = link_to article.title, article
+                  %span= article.date.strftime('%b %e')
+            %h2 Tags
+            %ol
+              - blog.tags.each do |tag, articles|
+                %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
+            %h2 By Year
+            %ol
+              - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+                %li= link_to "#{year} (#{articles.size})", blog_year_path(year)

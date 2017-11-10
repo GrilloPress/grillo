@@ -1,6 +1,6 @@
 ---
 title: New blog
-date: 2017-11-04 15:57 UTC
+date: 2017-11-03 15:57 UTC
 tags: blogging, css grid
 ---
 I've started this blog with two aims:
