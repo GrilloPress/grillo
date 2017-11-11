@@ -25,5 +25,10 @@
 
   @media screen and (max-width: $mobile) {
     grid-template-columns: 100%;
+
+    .next {
+
+      text-align: left;
+    }
   }
 }
