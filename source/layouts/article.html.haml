@@ -16,7 +16,7 @@
         %div.navbar-container
           %div
             = link_to "Andrew Duckworth", "/"
-      %article{:id => current_article.url}
+      %article{:id => title_as_class(current_article.title)}
         %section.hero
           %div.container
             %div

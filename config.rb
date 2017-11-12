@@ -62,7 +62,7 @@ page "/feed.xml", layout: false
 # end
 helpers do
   def title_as_class the_title
-    the_title.gsub(" ", "_")
+    the_title.downcase.gsub(" ", "_")
   end
 end
 
