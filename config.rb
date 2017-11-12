@@ -60,6 +60,11 @@ page "/feed.xml", layout: false
 #     "Helping"
 #   end
 # end
+helpers do
+  def title_as_class the_title
+    the_title.gsub(" ", "_")
+  end
+end
 
 # Build-specific configuration
 configure :build do
