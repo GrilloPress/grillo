@@ -14,7 +14,7 @@
       %div.navbar-container
         %div
           = link_to "Andrew Duckworth", "/"
-    #main.container{:role => "main"}
+    %main.container{:role => "main"}
       %section
         = yield
       %aside.sidebar
@@ -32,3 +32,8 @@
         %ol
           - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
             %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
+    %footer.container
+      %p
+        Copyright 2017 Andrew Duckworth
+        |
+        = link_to "@AndrewDuck_", "https://twitter.com/AndrewDuck_"

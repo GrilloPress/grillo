@@ -10,22 +10,24 @@
     = stylesheet_link_tag 'main'
     = yield_content :css
     = javascript_include_tag 'main'
-  %body{ :class => page_classes }
+  %body{ :class => page_classes  }
     %main{:role => "main"}
       %nav.navbar
         %div.navbar-container
           %div
             = link_to "Andrew Duckworth", "/"
-      %article
-        - if content_for?(:hero)
-          %section.hero
-            %div.container
-              %div
+      %article{:id => current_article.url}
+        %section.hero
+          %div.container
+            %div
+              - if content_for?(:hero)
                 %h1
                   = current_page.data.title
-                = yield_content :hero
-
-        #article.container{:role => "main"}
+                  = yield_content :hero
+              - else
+                %h1
+                  = current_page.data.title
+        #article.container
           %section.blog-post
             = yield
 
@@ -55,3 +57,8 @@
             %ol
               - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
                 %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
+    %footer.container
+      %p
+        Copyright 2017 Andrew Duckworth
+        |
+        = link_to "@AndrewDuck_", "https://twitter.com/AndrewDuck_"
