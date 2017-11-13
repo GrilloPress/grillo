@@ -40,6 +40,41 @@
     }
   }
 
+  // Todo board
+
+  .todo-board {
+
+    width: 100%;
+    min-height: 12rem;
+    padding: 0.5rem;
+    background-color: white;
+    border: 1px solid darkslategrey;
+    margin-bottom: 1.2rem;
+
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    div {
+
+      border-right: 1px solid green;
+      padding-right: 0.3rem;
+
+      .title {
+
+        padding: 0.2rem;
+        border-bottom: 1px solid green;
+        font-size: 15px;
+      }
+    }
+
+    div:last-child {
+
+      border-right: none;
+    }
+  }
+
+  // Kanbna card grid
   .kanban-card {
 
     width: 100%;

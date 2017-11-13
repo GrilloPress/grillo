@@ -17,24 +17,40 @@ tags: Interaction Design, Design, Agile
   Although early days, we have found it to be a real help and it has garnered some interest beyond the project we are on.
 
 %p
-  We wanted to make sure that could easily track what each other is working on as well as show our process to the rest of the project. We also wanted to ensure we priortised the design work we did and involved our Product Owner in priortising what design work was being focused on.
+  We wanted to make sure that we could easily track what each other is working on, as well as show our process to the rest of the project. We also wanted to ensure we priortised the design work we did and involved our Product Owner in priortising what design work was being focused on.
 
 %p
   Further to those reasons, we wanted to ensure we tracked every design decision we made, the evidence behind those decisions.
 
 %p Even if you are the sole designer/UX person, it is valuable to be able to communicate with other people on a project what you are working on and your current priorities.
 
-%p The board has helped us structure our word and track it better as well as expose that workflow to other members of the team.
+%p The board has helped us structure our work and track it better, as well as expose that workflow to other members of the team.
 
 %h2 So, what is Kanban?
 
-%p If you've worked on a software project before, you may have encountered Kanban boards.
+%p
+  If you've worked on a software project before, you may have encountered
+  %a{:href => "https://www.atlassian.com/agile/kanban"}Kanban boards.
 
-%p The simplest Kanban boards are often structured in three columns of "todo", "doing", "done".
+%p On a Kanban board, items (jobs, tasks or anything) are written on cards which sit on a board in a set of columns. Each column has a label indicating the cards status or activity. The cards move across the board as they change status.
 
-%p Jobs or tasks are written on cards which sit within one of these columns. The cards move across the board as they change status.
+%p The simplest Kanban boards are often structured in three columns of "todo", "doing", "done". Often this board structure then evolves with a "backlog" or "ideas" column preceeding the todo column for ideas to be stored before they are worked on.
 
-%p Like many workflows ours didn't feel like it fit with this simplisitic structure. But we did feel like this technique could help us structure our work, let us track it as well as communicate the problems we were working on.
+%div.todo-board
+  %div
+    %h3.h4.title
+      Ideas
+  %div
+    %h3.h4.title
+      Todo
+  %div
+    %h3.h4.title
+      Doing
+  %div
+    %h3.h4.title
+      Done
+
+%p Like many workflows ours didn't feel like it fit with this simplisitic structure. But we did feel like this technique could help us structure our work.
 
 %h2#how_we_implemented_kanban How we implemented Kanban
 
@@ -47,14 +63,16 @@ tags: Interaction Design, Design, Agile
 %div.kanban-card
   %div.title
     %h4
-      Title of the Kanban card  
+      Title of the Kanban card
   %div.stickers
     %span.design-review
     %span.wider-review
   %div.desc
-    hi
+    %p
+      Description of the hypothesis, thing to explore or issue raised
   %div.referrer
-    hi
+    %p
+      Originator of idea/issue (Project, Lab etc.)
 
 %p When we talked through the board with our product owner, they mentioned that it would be really valuabe for them, to be able to quickly see where design issues or tasks came from.
 
