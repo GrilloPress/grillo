@@ -23,8 +23,7 @@
               - if content_for?(:hero)
                 %h1
                   = current_page.data.title
-                %p
-                  = yield_content :hero
+                = yield_content :hero
               - else
                 %h1
                   = current_page.data.title
