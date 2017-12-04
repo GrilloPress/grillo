@@ -2,6 +2,7 @@
 @import "reboot";
 @import "typography";
 @import "pagination";
+@import "index";
 
 // Main page grid
 
@@ -24,7 +25,8 @@
 
 .navbar {
 
-  background-color: #FFC940;
+  background-color: $brand;
+
 }
 
 .navbar-container {
@@ -43,10 +45,26 @@
   a {
 
     font-weight: 700;
+    color: white;
 
+    &:hover {
+
+      text-decoration: underline;
+    }
   }
 }
 
+.hero {
+
+  color: $brand-secondary;
+  background-color: $brand;
+  padding: 4rem 0;
+
+  h1 {
+
+    font-size: 3.5rem;
+  }
+}
 
 // Page/post containers
 
