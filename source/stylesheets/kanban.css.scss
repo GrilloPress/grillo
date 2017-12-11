@@ -10,11 +10,11 @@
 
     h1 {
 
-      font-size: 7rem;
+      font-size: 6rem;
 
       @media screen and (max-width: $mobile) {
 
-        font-size: 4rem;
+        font-size: 3rem;
       }
 
     }
@@ -22,12 +22,18 @@
     p {
 
       font-size: 2rem;
+
+      @media screen and (max-width: $mobile) {
+
+        font-size: 1.7rem;
+      }
     }
   }
 
   .navbar {
 
     background-color: green;
+    border-bottom-color: darken( green, 10% ); 
 
     a {
 
@@ -50,6 +56,12 @@
     background-color: white;
     border: 1px solid darkslategrey;
     margin-bottom: 1.2rem;
+
+    @media screen and (max-width: $mobile) {
+
+      overflow: scroll;
+      grid-gap: 0.1rem;
+    }
 
     display: grid;
     grid-gap: 0.5rem;
@@ -139,6 +151,80 @@
 
   }
 
+  // Z-board iteration
 
+  .z-board {
+
+    width: 100%;
+    min-height: 12rem;
+    padding: 0.5rem;
+    background-color: white;
+    border: 1px solid darkslategrey;
+    margin-bottom: 1.2rem;
+
+    display: grid;
+    grid-gap: 0.3rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    @media screen and (max-width: $mobile) {
+
+      overflow: scroll;
+      grid-gap: 0.1rem;
+    }
+
+    div {
+
+      border-right: 1px solid green;
+      padding-right: 0.3rem;
+
+      .title {
+
+        padding: 0.2rem;
+        border-bottom: 1px solid green;
+        font-size: 15px;
+        margin-bottom: 0;
+
+        @media screen and (max-width: $mobile) {
+
+          font-size: 12px;
+        }
+      }
+    }
+
+    div:last-child {
+
+      border-right: none;
+    }
+
+    .inner-row {
+
+
+      border-right: 0px;
+      min-height: 6rem;
+
+      @media screen and (max-width: $mobile) {
+
+        min-height: 2rem;
+      }
+
+
+      h4 {
+
+        font-size: 15px;
+        background-color: green;
+        color: white;
+        margin-top: 2px;
+        padding: 0 5px;
+        margin-right: -5px;
+
+        @media screen and (max-width: $mobile) {
+
+          font-size: 11px;
+        }
+
+      }
+    }
+
+  }
 
 }
