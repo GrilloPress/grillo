@@ -65,14 +65,13 @@ helpers do
   def title_as_class the_title
     the_title.downcase.gsub(" ", "_")
   end
-  
+
 end
 
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
+  # Minify Javascript and CSS on build
+  activate :minify_css
+  activate :minify_javascript
+  set :build_dir, 'docs'
 end
